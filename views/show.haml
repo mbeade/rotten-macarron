@@ -1,0 +1,12 @@
+%label Title:
+%p.showdata #{@movie[:title]}
+%label Description:
+%p.showdata #{@movie[:description]}
+%label Rating:
+%p.showdata #{@movie[:rating]}
+%label Release date:
+%p.showdata #{@movie[:release_date]}
+%br
+%br
+%form{:action => "/", :method => "get"}
+  %input{:class => "input-button",:type => "submit", :value => "Back"}

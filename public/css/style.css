@@ -2,116 +2,157 @@ html, body {
     margin: 0;
     padding: 0;
     background: White;
-    color: DarkSlateGrey;
-    font-family: Tahoma, Verdana, sans-serif;
-    font-size: 10pt;
+    /*color: DarkSlateGrey;*/
+    /*font-family: Tahoma, Verdana, sans-serif;*/
+    /*font-size: 10pt;*/
+
+    font-size: 16px;
+    line-height: 18px;
+    color: #333;
 }
-h2 {
-    margin: 1em 0 .5em;
-    padding: 0;
-    background: transparent;
-    color: maroon;
-    font-size: 1.5em;
-}
-.odd {
-    background: white;
-}
-.even {
-    background: wheat;
+div#main {
+    margin: 0;
+    padding: 0 20px 20px;
 }
 a {
     background: transparent;
-    color: maroon;
+    color: #2DADDC;
     text-decoration: underline;
     font-weight: bold;
 }
 h1 {
+    color: maroon;
+    font-size: 150%;
+    font-style: italic;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+h1.title {
     margin: 0 0 1em;
     padding: 10px;
-    background-color: orange;
+    background-color: #333;
     color: white;
-    border-bottom: 4px solid gold;
+    border-bottom: 4px solid #0271BF;
     font-size: 2em;
-}
-h1 a {
-    text-decoration: none;
-    background: transparent;
-    color: white;
+    font-style: normal;
 }
 table#movies {
+    /*margin: 10px;*/
     border-collapse: collapse;
     width: 100%;
     border-bottom: 2px solid black;
 }
 table#movies th {
-    border: 2px solid black;
+    border: 2px solid white;
     font-weight: bold;
+    background-color: #333;
+    /*background-color: #2DADDC;*/
+    text-align: center;
+    border-color: #333;
+    color: #ffffff;
 }
 table#movies th, table#movies td {
     padding: 4px;
-    text-align: left;
+    text-align: center;
 }
-em {
-    font-weight: bold;
-    font-style: normal;
+table#movies th.hilite {
+    background-color: #eeeeee;
 }
-div#body {
-    margin: 0;
-    padding: 0 20px 20px;
-}
-.errorExplanation {
-    padding: 0 10px;
-    margin: 1em 2px;
-    border: 2px solid red;
-    background: #fcb;
-}
-.errorExplanation h2 {
-    font-size: 1.1em;
-    color: red;
-}
-.errorExplanation ul {
-    list-style: disc inside;
-}
-div.fieldWithErrors {
-    display: inline;
-}
-.fieldWithErrors input, .fieldWithErrors textarea, .fieldWithErrors select {
-    background: #fcb;
-}
-#flash_notice {
+#notice #warning {
     background: rosybrown;
     margin: 1em 0;
     padding: 4px;
 }
-#flash_error {
-    background: pink;
-    margin: 1em 0;
-    padding: 4px;
-}
-ul#page_nav {
-    margin: 2em 0 0;
-    padding: 0;
-    list-style: none;
-}
-ul#page_nav li {
-    margin: 1em 0;
-    padding: 0;
-}
-form ul {
-    margin: 10px;
-    padding: 0;
-    list-style: none;
-}
-form li {
-    margin: 1em 0;
-    padding: 0;
-}
 form label {
-    display: inline-block;
-    width: 150px;
-    vertical-align: top;
+    display: block;
     line-height: 25px;
+    font-weight: bold;
+    color: #333;
 }
-form #submit {
-    margin-left: 150px;
+
+input[type=text]{
+
+    border: 1px solid #CCC;
+    -webkit-box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+    -webkit-box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    height: 30px;;
+    padding: 3px;
+
+}
+
+/*Jquery calendar*/
+.ui-datepicker-calendar{
+    background-color: #d3d3d3;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #096EB3;
+    padding: 5px;
+
+
+}
+
+.ui-datepicker-header{
+    background-color: #d3d3d3;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #096EB3;
+    padding: 5px;
+
+}
+
+.ui-icon{
+    margin-right: 10px;;
+}
+
+/*Buttons*/
+.input-button{
+    /*background-color:maroon;*/
+    /*color: white;*/
+    /*font-weight: bold;*/
+    /*-moz-border-radius: 10px;*/
+    /*-webkit-border-radius: 10px;*/
+    /*-khtml-border-radius: 10px;*/
+    /*border-radius: 10px;*/
+    height: 30px;
+    width: auto;
+
+
+
+    color: white;
+    background-color: #0271BF;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear,left top,left bottom,from(#2DADDC),to(#0271BF));
+    background-image: -moz-linear-gradient(#2DADDC,#0271BF);
+    background-image: -ms-linear-gradient(#2DADDC,#0271BF);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#2DADDC),color-stop(100%,#0271BF));
+    background-image: -webkit-linear-gradient(#2DADDC,#0271BF);
+    background-image: -o-linear-gradient(#2DADDC,#0271BF);
+    background-image: linear-gradient(#2DADDC,#0271BF);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2daddc',endColorstr='#0271bf',GradientType=0);
+    border-color: #096EB3;
+}
+
+p.showdata{
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.td-delete{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.input-button-add{
+    /*margin-left: 30px;*/
 }

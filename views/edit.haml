@@ -1,0 +1,27 @@
+%h2 Create New Movie
+%form{:action => "/#{@movietmp[:id]}", :method => "post"}
+      %input{:type => "hidden",:name => "_method" ,:value => "put"}
+      %label{:for => "title"} Title:
+      %input.form-login{:type => "text", :name => "title", :id => "title" , :size => "80", :value => "#{@movietmp[:title]}"}
+      %br/
+      %label{:for => "description"} Description:
+      %input.form-login{:type => "text", :name => "description", :id => "description",:size => "80", :value => "#{@movietmp[:description]}"}
+      %br/
+      %label{:for => "rating"} Rating:
+      %select{ :name => "rating", :id => "rating"}
+            %option{:value=>"PG" , :selected => "#{@movietmp[:rating]}"=="PG" ? "selected" : nil } PG
+            %option{:value =>"PG-13" , :selected => "#{@movietmp[:rating]}"=="PG-13" ? "selected" : nil } PG-13
+            %option{:value => "R" , :selected => "#{@movietmp[:rating]}"=="R" ? "selected" : nil } R
+            %option{:value => "NC-17", :selected => "#{@movietmp[:rating]}"=="NC-17" ? "selected" : nil  } NC-17
+      %br/
+      %label{:for => "datepicker"} Release:
+      %input{:type => "text", :name => "release", :id => "datepicker", :readonly=>"readonly" , :size => "8" ,:value => "#{@movietmp[:release_date]}"}
+      %br/
+      %br/
+      %input{:class => "input-button",:type => "submit", :value => "Confirm"}
+      %form{:action => "/", :method => "get"}
+            %input{:class => "input-button",:type => "submit", :value => "Cancel"}
+      :javascript
+      $(function() {
+            $( "#datepicker" ).datepicker();
+      });
