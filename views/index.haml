@@ -1,35 +1,42 @@
 %h2 All Movies
-%table#movies
-  %thead
-    %tr
-      %th.title_header
-        %a{ :href => "/sort"} Movie Title
-      %th Rating
-      %th Release Date
-      %th More Info
-      %th
-      %th
-  %tbody
-    - @movie.each do |movie|
+%form{:action => "/search-show", :method => "get"}
+  %input{:class => "input-button input-button-add",:type => "submit",:value => "Search"}
+- if @movie.empty?
+  %h2.result Nothing to show!
+- else
+  %table#movies
+    %thead
       %tr
-        %td= movie.title
-        %td= movie.rating
-        %td= movie.release_date
-        %td.td-delete
-          %form{:action => "/#{movie.title}", :method => "get"}
-            %input{:class => "input-button",:type => "submit", :value => "Show"}
-        %td.td-delete
-          %form{:action => "/edit/#{movie.id}", :method => "get"}
-            %input{:class => "input-button",:type => "submit",:value => "Modify"}
-        %td.td-delete
-          %form{:action => "/#{movie.id}", :method => "post"}
-            %input{:type => "hidden", :name => "_method", :value => "delete"}
-            %input{:class => "input-button",:type => "submit",:name => "_method", :value => "Delete"}
-
-
-%br
+        %th.title_header
+          %a{ :href => "/sort"} Movie Title
+        %th Rating
+        %th Release Date
+        %th More Info
+        %th Modify
+        %th Delete
+    %tbody
+      - @movie.each do |movie|
+        %tr
+          %td= movie.title
+          %td= movie.rating
+          %td= movie.release_date
+          %td.td-delete
+            %form{:action => "/#{movie.title}", :method => "get"}
+              %input{:class => "input-button",:type => "submit", :value => "Show"}
+          %td.td-delete
+            %form{:action => "/edit/#{movie.id}", :method => "get"}
+              %input{:class => "input-button",:type => "submit",:value => "Modify"}
+          %td.td-delete
+            %form{:action => "/#{movie.id}", :method => "post"}
+              %input{:type => "hidden", :name => "_method", :value => "delete"}
+              %input{:class => "input-button",:type => "submit",:name => "_method", :value => "Delete"}
 %br
 %form{:action => "/new", :method => "get"}
-  %input{:class => "input-button input-button-add",:type => "submit",:value => "Add new movie"}
+  %input{:class => "input-button input-button-add",:id => "add-button",:type => "submit",:value => "Add new movie"}
 %br
-%br
+- if @movie.empty?
+  :javascript
+       $('#add-button').hide();
+- else
+  :javascript
+       $('#add-button').show();

@@ -134,8 +134,9 @@ input[type=text]{
     background-image: -webkit-linear-gradient(#2DADDC,#0271BF);
     background-image: -o-linear-gradient(#2DADDC,#0271BF);
     background-image: linear-gradient(#2DADDC,#0271BF);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2daddc',endColorstr='#0271bf',GradientType=0);
     border-color: #096EB3;
+    margin: 0px;
+    margin-top: 10px;
 }
 
 p.showdata{
@@ -150,9 +151,33 @@ p.showdata{
 
 .td-delete{
     text-align: center;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 .input-button-add{
     /*margin-left: 30px;*/
+}
+
+
+.cancel{
+
+}
+
+.result{
+  color: #2DADDC;
+}
+
+
+
+
+
+#movies tr:nth-child(even) {
+    background: #5f5f62;
+    color: #ffffff;
+}
+
+#movies tr:nth-child(odd) {
+    background:#eeeeee;
+    color: #333333;
+
 }

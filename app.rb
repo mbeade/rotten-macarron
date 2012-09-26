@@ -5,6 +5,11 @@ require File.join(File.dirname(__FILE__), 'models/movie')
 
 use Rack::MethodOverride
 
+
+configure do
+  enable :sessions
+end
+
 get '/' do
  @movie = Movie.all
  haml :index
@@ -19,6 +24,38 @@ end
 
 get '/new' do
   haml :new
+end
+
+
+get '/search-show' do
+  haml :search
+end
+
+get '/search' do
+  my_query = ""
+  if !params[:title].to_s.empty?
+    my_query << "title LIKE '#{params[:title]}%'"
+  end
+
+  if !params[:description].to_s.empty?
+    if my_query.empty?
+      my_query << " description LIKE '#{params[:description]}%'"
+    else
+      my_query << " and description LIKE '#{params[:description]}%'"
+    end
+  end
+
+  if params[:rating] != "select"
+    if my_query.empty?
+      my_query << " rating= '#{params[:rating]}'"
+    else
+      my_query << " and rating= '#{params[:rating]}'"
+    end
+  end
+
+  dataset = Movie.where(my_query)
+  @movie = dataset.all
+  haml :index
 end
 
 post '/add' do
@@ -36,7 +73,16 @@ post '/add' do
 end
 
 get "/sort" do
-  dataset = Movie.select(:title, :description,:rating,:release_date).order(:title);
+
+  if  session[:order] == :asc
+    session[:order] = :desc
+    dataset = Movie.select(:title, :description,:rating,:release_date).reverse_order(:title);
+  else
+    session[:order] = :asc
+    dataset = Movie.select(:title, :description,:rating,:release_date).order(:title);
+  end
+
+
   @movie = dataset.all
   haml :index
 end

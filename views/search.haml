@@ -1,27 +1,20 @@
-%h2 Create New Movie
-%form{:action => "/add", :method => "post"}
-      %input{:type => "hidden", :name => "id"}
+%h2 Search movies
+%form{:action => "/search", :method => "get"}
       %label{:for => "title"} Title:
       %input.form-login{:type => "text", :name => "title", :id => "title" , :size => "80"}
-      %br/
+      %br
       %label{:for => "description"} Description:
       %input.form-login{:type => "text", :name => "description", :id => "description",:size => "80"}
-      %br/
+      %br
       %label{:for => "rating"} Rating:
       %select{ :name => "rating", :id => "rating"}
+            %option{:value=>"select", :selected => "selected"} Select
             %option{:value=>"PG"} PG
             %option{:value =>"PG-13" } PG-13
             %option{:value => "R" } R
             %option{:value => "NC-17" } NC-17
-      %br/
-      %label{:for => "datepicker"} Release:
-      %input{:type => "text", :name => "release", :id => "datepicker", :readonly=>"readonly" , :size => "8"}
-      %br/
-      %br/
-      %input{:class => "input-button",:type => "submit", :value => "Save!"}
+      %br
+      %br
+      %input{:class => "input-button",:type => "submit", :value => "Search"}
 %form.cancel{:action => "/", :method => "get"}
       %input{:class => "input-button",:type => "submit", :value => "Cancel"}
-      :javascript
-      $(function() {
-            $( "#datepicker" ).datepicker();
-      });
