@@ -1,5 +1,5 @@
-%h2 Create New Movie
-%form{:action => "/#{@movietmp[:id]}", :method => "post"}
+%h2 Edit Movie information
+%form{:action => "/#{@movietmp[:id]}", :method => "post" , :id => "form-edit"}
       %input{:type => "hidden",:name => "_method" ,:value => "put"}
       %label{:for => "title"} Title:
       %input.form-login{:type => "text", :name => "title", :id => "title" , :size => "80", :value => "#{@movietmp[:title]}"}

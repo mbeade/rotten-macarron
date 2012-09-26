@@ -112,18 +112,8 @@ input[type=text]{
 
 /*Buttons*/
 .input-button{
-    /*background-color:maroon;*/
-    /*color: white;*/
-    /*font-weight: bold;*/
-    /*-moz-border-radius: 10px;*/
-    /*-webkit-border-radius: 10px;*/
-    /*-khtml-border-radius: 10px;*/
-    /*border-radius: 10px;*/
     height: 30px;
     width: auto;
-
-
-
     color: white;
     background-color: #0271BF;
     background-repeat: repeat-x;
@@ -146,7 +136,7 @@ p.showdata{
     -webkit-margin-after: 0.83em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-    font-weight: bold;
+
 }
 
 .td-delete{
@@ -159,17 +149,14 @@ p.showdata{
 }
 
 
-.cancel{
-
+label, #form-edit label{
+   font-weight: bold;
+   color: #2DADDC;
 }
 
 .result{
   color: #2DADDC;
 }
-
-
-
-
 
 #movies tr:nth-child(even) {
     background: #5f5f62;

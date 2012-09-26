@@ -29,14 +29,11 @@
           %td.td-delete
             %form{:action => "/#{movie.id}", :method => "post"}
               %input{:type => "hidden", :name => "_method", :value => "delete"}
-              %input{:class => "input-button",:type => "submit",:name => "_method", :value => "Delete"}
+              %input{:class => "input-button",:type => "submit",:name => "_method", :value => "Delete", :id => "delete"}
 %br
 %form{:action => "/new", :method => "get"}
   %input{:class => "input-button input-button-add",:id => "add-button",:type => "submit",:value => "Add new movie"}
 %br
-- if @movie.empty?
-  :javascript
-       $('#add-button').hide();
-- else
-  :javascript
-       $('#add-button').show();
+
+
+
